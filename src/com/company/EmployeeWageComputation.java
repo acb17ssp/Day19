@@ -13,25 +13,32 @@ public class EmployeeWageComputation {
         // Variables
         int empHours = 0;
         int salary = 0;
+        int totalWage = 0;
 
-        // random numbers (0,1,2)
-        int randomNum = (int)( Math.random() * 2 + 1);
+        // for loop
+        for (int i=1; i<=5; i++){
 
-        // Using Switch case
-        switch(randomNum){
-            case IS_FULL_TIME:
-                System.out.println("Full time Employee");
+            // random numbers (0,1,2)
+            int randomNum = (int)( Math.random() * 2 + 1);
+
+            // selection statement
+            if (randomNum == IS_FULL_TIME){
+                System.out.println("Full time - Present");
                 empHours = 8;
-                break;
-            case IS_PART_TIME:
-                System.out.println("Part time Employee");
+            }
+            else if (randomNum == IS_PART_TIME){
+                System.out.println("Part time - Present");
                 empHours = 4;
-                break;
-            default:
-                System.out.println("Absent");
-        }
+            }
+            else{
+                System.out.println("Employee is Absent" + '\n');
+            }
 
-        salary = EMP_RATE * empHours;
-        System.out.println("Employee salary: " + salary);
+            // calculation of salary
+            salary = EMP_RATE * empHours;
+            System.out.println("Employee salary for a day: " + salary + '\n');
+            totalWage+=salary;
+        }
+        System.out.println("Total salary: " + totalWage);
     }
 }
